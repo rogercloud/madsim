@@ -118,7 +118,7 @@ impl Inner {
                     advance_slices(&mut bufs, n);
                 }
                 writer.flush().await.unwrap();
-                done.send(()).unwrap();
+                let _ = done.send(());
             }
         });
 
